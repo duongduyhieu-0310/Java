@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class SimplifyFrac {
+    public static void main(String args[]){
+      int Nume = Integer.parseInt(args[0]);
+      int Denom = Integer.parseInt(args[1]);
+      printSimplest( Nume, Denom);
+    }
+    
+   public static void printSimplest(int Nume, int Denom) {
+        int gcd = greatestCommonDivisor(Nume, Denom);
+        int sN = Nume / gcd;
+        int sD = Denom / gcd;
+        if(Nume<0 && Denom>0){
+        System.out.println(sN*-1+"/"+sD*-1);
+        }else {
+        System.out.println(sN+"/"+sD);
+    }
+   }
+    
+    public static int greatestCommonDivisor(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return greatestCommonDivisor(b, a % b);
+    }
+}

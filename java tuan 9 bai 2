@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class PrintNumberInWord {
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int number = sc.nextInt();
+	if (number ==1) {
+		System.out.println("MOT");
+	}else if(number==2) {
+		System.out.println("HAI");
+	}else if(number==3) {
+		System.out.println("BA");
+	}else if(number==4) {
+		System.out.println("BON");
+	}else if(number==5) {
+		System.out.println("NAM");
+	}else if(number==6) {
+		System.out.println("SAU");
+	}else if(number==7) {
+		System.out.println("BAY");
+	}else if(number==8) {
+		System.out.println("TAM");
+	}else if(number==9) {
+		System.out.println("CHIN");
+	}else {
+		System.out.println("OTHER");
+	}
+}
+}

@@ -1,0 +1,88 @@
+import java.util.Scanner;
+public class Array1D {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        /* TODO */
+        int size = sc.nextInt();
+        int A[] = new int[size]; 
+        A = inputArray(size,sc);
+        printArray(A);
+        printDescendingArray(A);
+        
+    }
+    
+    public static void inputArray(int[] array1d, Scanner keyboard) {
+        /* TODO */
+        for(int i = 0; i< array1d.length; i++){
+            array1d[i] = keyboard.nextInt();
+            
+        }
+        
+    }
+    
+    public static int[] inputArray(int size, Scanner keyboard) {
+        /* TODO */
+        int [] array = new int[size];
+        for(int i = 0; i<size; i++){
+            array[i] = keyboard.nextInt();
+        }
+        
+        return array;
+    }
+    
+    public static void printArray(int[] array1d) {
+        /* TODO */
+        for(int i = 0; i< array1d.length; i++){
+            System.out.print(array1d[i] + " ");
+        }
+        
+    }
+    
+    public static void printDescendingArray(int[] array1d) {
+        /* TODO */
+        int max = array1d[0];
+        for (int i = 0 ; i < array1d.length - 1; i++) {
+            for (int j = i + 1; j < array1d.length; j++) {
+                if (array1d[i] < array1d[j]) {
+                    max = array1d[i];
+                    array1d[i] = array1d[j];
+                    array1d[j] = max;
+                }
+            }
+        }
+        printArray(array1d);
+        
+    }
+    
+    public static void print2ndElementWithIndices(int[] a) {
+        /* TODO */
+        int n = a.length;
+        int maxx = a[0];
+        for (int i = 0; i < n; i++) {
+            if (a[i] > maxx) 
+                maxx = a[i];
+        }
+            
+        int ndMax = (-1)*9999;
+        for (int i = 0; i < n; i++) {
+            if (a[i] > ndMax && a[i] < maxx) 
+                ndMax = a[i];
+        }
+        System.out.print(ndMax + "[");
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[i] == ndMax) ++ count;
+        }
+        int k = 0;
+        for (int i = 0; i < n; i ++) {
+            if (a[i] == ndMax && k < count-1) {
+                System.out.print(i+1 + " ");
+                ++k;
+            }
+            else if (a[i] == ndMax && k == count-1) 
+                System.out.print(i+1 + "]");
+        }
+        
+    }
+        
+}

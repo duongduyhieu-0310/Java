@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class SumColumns {
+    public static void main (String[] args) {
+    	Scanner sc = new Scanner(System.in);
+    	int rows = sc.nextInt();
+    	int columns = sc.nextInt();
+    	int [][]A = new int [rows][columns];
+    	inputMatrix(A,sc);
+    	
+    	 printArray(sumColumns(A));
+    	
+    	
+    	
+       
+    }
+    
+    public static void inputMatrix(int[][] matrix, Scanner keyboard) {
+    	for(int i =0;i<matrix.length;i++) {
+    		for(int j = 0;j<matrix[0].length;j++) {
+    			matrix[i][j]= keyboard.nextInt();
+    			
+    		}
+    	}
+       
+    } 
+    
+    public static void generateMatrix(int rows, int columns, Scanner keyboard) {
+        
+    }
+    
+    public static int[] sumColumns(int[][] matrix) {
+    	int[] sumColumns = new int [matrix[0].length];
+    	for (int j = 0; j < matrix[0].length; j++) {
+            int sum = 0;
+            for (int i = 0; i < matrix.length; i++) {
+                sum += matrix[i][j];
+            }
+            sumColumns[j] = sum;
+    
+    	}
+   
+   
+		return sumColumns;
+    }
+    
+    public static void printMatrix(int[][] matrix) {
+    	for(int i =0;i<matrix.length;i++) {
+    		for(int j = 0;j<matrix[0].length;j++) {
+    			System.out.print(matrix[i][j]+" ");
+    		}
+    	}
+    	System.out.println();
+        
+    }
+    
+    public static void printArray(int[] array) {
+    	for(int i= 0;i<array.length;i++) {
+    		System.out.print(array[i]+" ");
+    	}
+    
+      
+    }
+}

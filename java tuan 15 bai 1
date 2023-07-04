@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Babylonian {
+    public static double babylonian(int x) {
+        double y = 1; 
+        while (true) {
+            double q = x / y;
+            double avg = (q + y) / 2;
+            if (Math.abs(y - q) < 0.00001) { // Kiểm tra điều kiện thoát vòng lặp
+                break;
+            }
+            y = avg;
+        }
+        return y;
+    }
+
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        System.out.println(babylonian( x));
+    }
+}

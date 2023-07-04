@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+
+public class Matrix {
+
+  public static void main(String[] args) {
+	  Scanner sc = new Scanner(System.in);
+	  int value = sc.nextInt();
+	  int rows = sc.nextInt();
+	  int columns = sc.nextInt();
+	  int [][]A =  new int [rows][columns];
+	  
+	  inputMatrix(A, sc);
+	 printLowerTriangularMatrix(A) ;
+	
+	  
+	  findInLowerTriangularMatrix(A,  value);
+		  
+	  }
+ 
+  
+  public static void inputMatrix(int[][] matrix, Scanner keyboard) {
+	  for(int i =0;i<matrix.length;i++) {
+		  for(int j =0;j<matrix[0].length;j++) {
+			  matrix[i][j] = keyboard.nextInt();
+		  }
+	  }
+  
+  }
+
+  public static int[][] inputMatrix(int rows, int columns, Scanner keyboard) {
+	  int [][] C = new int [rows][columns];
+	  for(int i =0;i< rows;i++) {
+		  for(int j =0;j<columns;j++) {
+			  C[i][j] = keyboard.nextInt();
+		  }
+		  
+	  }
+	return C;
+  }
+  
+  public static void printMatrix(int[][] matrix) {
+	  for(int i =0;i<matrix.length;i++) {
+		  for(int j =0;j<matrix[0].length;j++) {
+			  System.out.print(matrix[i][j]+" ");
+		  }
+	  System.out.println();	 
+	  }
+  }
+  
+  public static void printLowerTriangularMatrix(int[][] matrix) {
+    for(int i =0; i<matrix.length;i++) {
+    	for(int j =0;j<matrix[0].length;j++) {
+    		if(j >i) {
+    			matrix[i][j]=0;
+    		}
+    		System.out.print(matrix[i][j]+" ");
+    		}
+    System.out.println();
+    }
+  }
+  
+  public static void findInLowerTriangularMatrix(int[][] matrix, int value) {
+	  boolean timthay = false;
+	  for(int i =0; i<matrix.length;i++) {
+	    	for(int j =0;j<matrix[0].length;j++) {
+	    		if (matrix[i][j]==value) {
+	    	       timthay = true;
+	    	       break;
+	    	}
+	  }
+	  }
+	  if(timthay== true) {
+		  System.out.println("YES");
+  }else {
+	  System.out.println("NO");
+  }
+  }
+  }

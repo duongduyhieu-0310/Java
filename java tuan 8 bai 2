@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class SimplifyFraction {
+    public static void main (String[] args) {
+    	Scanner sc = new Scanner(System.in);
+    	int  n =sc.nextInt();
+    	int  d =sc.nextInt();
+    	printSimplifiedFraction(n, d);
+    	
+    	
+    	
+    
+    }
+    
+    public static int gcd(int num1, int num2) {
+    	if(num2==0) {
+    		return num1;
+    	}
+    	while(num2!=0) {
+    		int t = num1%num2;
+    		num1= num2;
+    		num2 = t;		
+    	}
+    
+		return num1;
+       
+    }
+    
+    public static void printSimplifiedFraction(int numerator, int denominator) {
+    	 int g = gcd(numerator, denominator);
+         int sN = numerator / g;
+         int sD = denominator / g;
+         if(numerator % denominator == 0) {
+        	 System.out.println(sN/sD);
+         }
+         else if(numerator<0 && denominator>0||numerator>0 && denominator<0){
+         System.out.println(sN*-1+"/"+sD*-1);
+         }
+        else {
+         System.out.println(sN+"/"+sD);
+     }
+    }
+}

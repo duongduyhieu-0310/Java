@@ -1,0 +1,90 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Array1D {
+    public static void main (String[] args) {
+         Scanner sc = new Scanner(System.in);
+         int value = sc.nextInt();
+         int size = sc.nextInt();
+         int []A = new int [size];
+         
+    }
+    
+    public static int[] inputArray(int size, Scanner keyboard) {
+    	int [] A = new int [size];
+    	for(int i =0; i<size; i++) {
+    		A[i]= keyboard.nextInt();
+    	}
+		return A;
+       
+    }
+     
+    public static String arrayToString(int[] array) {
+        String s = "[";
+        for (int i = 0; i < array.length-1; i++) {
+            String str = String.valueOf(array[i]);
+            s = s + str;
+            s = s + ",";
+        }
+        String str = String.valueOf(array[array.length-1]);
+        s = s + str;
+        s = s + "]";
+		return s;
+      
+    } 
+    
+    public static int[] copyOf(int[] array) {
+    	int [] newarray = new int [array.length];
+    	for(int i =0; i<array.length;i++) {
+    		newarray[i]= array[i];
+    	}
+		return newarray;
+      
+    }
+    
+    public static void sort(int[] array) {
+    	int temp;
+    	for (int i =0;i<array.length-1;i++) {
+    		for(int j =i+1;j<array.length;j++) {
+    			if(array[i]>array[j]) {
+    				temp = array[i];
+    				array[i]=array[j];
+    				array[j] = temp;
+    				
+    			}
+    		}
+    	}
+    	
+      
+    }
+    
+    public static int search(int[] array, int value) {
+    	for(int i =0; i<array.length;i++) {
+    		if(array[i]==value) {
+    			return i;
+    		}
+    	}
+		return -1;
+       
+    }
+    
+    public static boolean contains(int[] array, int value) {
+    	int left = 0;
+    	int right = array.length-1;
+    	while(left <= right) {
+    	int mid = (left+right)/2;
+    	if(array[mid]==value) {
+    		return true;
+    	}
+    		else if(array[mid] < value)	{
+    			left = mid +1;
+    		
+    	}else {
+    		right = mid -1;
+    		
+    	}
+        
+    }
+		return false;
+}
+}

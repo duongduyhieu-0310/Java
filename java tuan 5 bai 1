@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class FindMinMax{
+    
+    public static int findMin(int Array[]){
+    	int min = Array[0];
+    	int i =0;
+    	for ( i = 0; i < Array.length; i++) {
+	if (Array[i] < min) {
+            min= Array[i];
+        }
+    	}
+	return min;
+      
+    	}
+    
+    public static int findMax(int Array[]){
+    	int max = Array[0];
+    	int i =0;
+    	for ( i = 0; i < Array.length; i++) {
+	if (Array[i] > max) {
+            max = Array[i];
+        }
+    	}
+	return max;
+      
+    	}
+    
+    public static void main(String args[]){
+       Scanner sc = new Scanner(System.in);
+       int n = sc.nextInt();
+       int[]Array=  new int[n];
+       for (int i = 0; i < n; i++) {
+           Array[i] = sc.nextInt();
+       }
+       System.out.println(findMin(Array)+" "+findMax(Array));
+      
+         
+       }
+       
+    }
+    

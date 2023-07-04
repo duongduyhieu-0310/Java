@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+
+public class MatrixFun {
+    public static int[][] inputMatrix(Scanner reader) {
+        int n = reader.nextInt();
+        int [][]mat = new int [n][n];
+        for(int i =0; i<n;i++){
+            for(int j =0; j<n;j++){
+                mat[i][j] = reader.nextInt();
+                
+            }
+        }
+        return mat;
+    }
+
+    public static boolean isOEBalance(int[][] matr) {
+        int demchan =0;
+        int demle =0;
+        for(int i =0; i<matr.length;i++){
+            for(int j =0;j<matr[0].length;j++){
+                if(matr[i][j]%2==0){
+                    demchan++;
+                }else{
+                    demle++;
+                }
+            }
+        }
+        if(Math.abs(demle-demchan)<=1){
+            return true;
+        }else{
+
+        return false;
+        }
+    }
+
+public static boolean isContainsHole(int[][] matr) {
+    int rows = matr.length;
+    int cols = matr[0].length;
+    // Duyệt qua từng phần tử của ma trận
+    for (int i = 1; i < rows - 1; i++) {
+        for (int j = 1; j < cols - 1; j++) {
+            int curr = matr[i][j];
+            // Kiểm tra nếu phần tử hiện tại nhỏ hơn tất cả các phần tử xung quanh nó
+            if (curr < matr[i-1][j] && curr < matr[i+1][j]
+                && curr < matr[i][j-1] && curr < matr[i][j+1]
+                && curr < matr[i-1][j-1] && curr < matr[i+1][j+1]
+                && curr < matr[i-1][j+1] && curr < matr[i+1][j-1]) {
+                    return true; // ma trận chứa hố
+            }
+        }
+    }
+    return false; // ma trận không chứa hố
+}
+}

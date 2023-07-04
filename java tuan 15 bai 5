@@ -1,0 +1,19 @@
+public class HanoiTower {
+
+    public static void main(String[] args) {
+        /* TODO */
+        int D = 3;
+		    recursiveHanoi(D, 'A', 'B', 'C');
+    }
+
+    public static void recursiveHanoi(int n, char s, char a, char d) {
+        /* TODO */
+         if (n == 1){
+		         System.out.println("D"+ n + " " + s+ " to " + d);
+		      }else {
+		         recursiveHanoi(n - 1, s, d, a);
+		         System.out.println("D"+ n + " " + s+ " to " + d);
+		         recursiveHanoi(n-1, a, s, d);
+		      }
+    }
+}

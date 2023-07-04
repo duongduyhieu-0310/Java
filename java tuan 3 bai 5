@@ -1,0 +1,19 @@
+public class Exp {
+	public static void main(String[] args) {
+	double x = Double.parseDouble(args[0]);
+	int n = Integer.parseInt(args[1]);
+	double Sum = 1.0;
+	double Exp = 1.0;
+	for(int i=1;i<=n;i++) {
+		Sum*=x/i;
+		Exp += Sum;
+		
+	}
+	double kq=Math.round(Exp*100.0)/100.0;
+	System.out.println(kq);
+	
+	
+	
+
+}
+}

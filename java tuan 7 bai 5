@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class TimesMatrix{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        int columns = sc.nextInt();
+        int matrixA[][] = new int[rows][columns];
+        int matrixB[][] = new int[columns][rows];
+        inputMatrix(matrixA,sc);
+        inputMatrix(matrixB,sc);
+        print(nhanMatran(matrixA,matrixB));
+    }
+    public static void inputMatrix(int[][] matrix, Scanner sc){
+        for(int i = 0; i< matrix.length; i++){
+            for(int j = 0; j< matrix[0].length; j++){
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+    }
+    public static int[][] nhanMatran(int[][]A, int [][] B){
+        int[][] C = new int[A.length][A.length];
+        for(int i = 0; i< A.length; i++){
+            for(int j = 0; j< B[0].length; j++){
+                for(int k = 0; k < B.length; k++){
+                  C[i][j] += A[i][k]*B[k][j];  
+                }
+                
+            }
+        }
+        return C;
+    }
+    public static void print(int[][] matrix){
+        for(int i = 0; i< matrix.length; i++){
+            for(int j = 0; j< matrix.length; j++){
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+    }
+    
+    
+}

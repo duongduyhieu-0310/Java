@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class SortArray {
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int [] A = new int [N];
+        for (int i = 0; i < N; i++) {
+            A[i] = sc.nextInt();
+        }
+        sortASC(A);
+        show(A);
+    }
+     
+    public static void sortASC(int [] A) {
+        int temp = A[0];
+        for (int i = 0 ; i < A.length - 1; i++) {
+            for (int j = i + 1; j < A.length; j++) {
+                if (A[i] > A[j]) {
+                    temp = A[j];
+                    A[j] = A[i];
+                    A[i] = temp;
+                }
+            }
+        }
+    }
+     
+    public static void show(int [] A) {
+        for (int i = 0; i < A.length; i++) {
+            System.out.print(A[i] + " ");
+        }
+    }
+}

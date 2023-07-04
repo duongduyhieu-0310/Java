@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class CircleTest {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	    int xC = sc.nextInt();
+	    int yC = sc.nextInt();
+	    int radius = sc.nextInt();
+	    int xM = sc.nextInt();
+	    int yM = sc.nextInt();
+	    double CM =Math.sqrt((xM-xC)*(xM-xC)+(yM-yC)*(yM-yC));
+	    if (CM <radius) {
+	    	System.out.println("YES");
+	    }else {
+	    	System.out.println("NO");
+	    }
+	    
+		
+	}
+
+}

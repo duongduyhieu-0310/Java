@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class SuperPrime {
+public static boolean isPrime(int n) {
+    if (n <= 1) {
+        return false;
+    }
+    for (int i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+public static boolean isSuperPrime(int n) {
+	while (n> 0) {
+	if(isPrime(n)==false) {
+		return false;
+	}
+	else {
+		n=n/10;
+	}
+}
+	return true;
+}
+
+
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+	 int n = sc.nextInt();
+	 if(isSuperPrime(n)==true&& n!=0) {
+		 System.out.println("True");
+	 }else {
+		 System.out.println("False");
+	 }
+ 
+}
+}

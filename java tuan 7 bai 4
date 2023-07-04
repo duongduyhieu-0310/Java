@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class CheckMatrix {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int [][]matrix = new int [size][size];
+        
+        if( checkMatrix(  inputMatrix( size, sc))) {
+        	System.out.println("YES");
+        	
+        }else {
+        	System.out.println("NO");
+        }
+        
+        
+    }
+    
+    public static void inputMatrix(int[][] matrix, Scanner keyboard) {
+    	 Scanner sc = new Scanner(System.in);
+	       for(int i=0;i<matrix.length;i++) {
+	    	for(int j=0;j<matrix[0].length;j++)   {
+	    		 matrix[i][j] = keyboard.nextInt();
+	    	}
+	       }
+    }
+    
+    public static int[][] inputMatrix(int size, Scanner keyboard) {
+    	int [][] matrix =  new int [size][size];
+    	for(int i =0; i<size;i++) {
+    		for(int j =0; j<size;j++) {
+    	 matrix[i][j]  =  keyboard.nextInt();
+    		}
+    	}
+		return matrix;
+       
+    }
+    
+    public static boolean checkMatrix(int[][] matrix) {
+    	int size = matrix.length;
+    for(int i =0;i<matrix.length;i++) {
+    	for(int j =0;j<matrix[0].length;j++) {
+    		if(matrix[i][j]<1||matrix[i][j]>size*size){
+    		
+    			return false;
+   
+    		}
+    	}
+    }
+		return true;
+    } 
+    
+}

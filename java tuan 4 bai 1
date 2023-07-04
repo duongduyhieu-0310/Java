@@ -1,0 +1,42 @@
+public class ngaytrongthang{
+	public static boolean namthang(int thang ,int nam) {
+		 if ( nam > 0 && 1 <= thang && thang <= 12) {
+			return true;
+		 }else {
+			return false;
+	}
+	}
+    
+    public static int SoNgay(int thang, int nam){
+    	if(thang==1||thang==3||thang==5||thang==7||thang==8||thang==10||thang==12) {
+		return 31;
+    	}
+		else if(thang==4||thang==6||thang==9||thang==11) {
+			return 30;
+		}
+		else if(thang==2) {
+			if((nam%4==0&&nam%100!=0)||nam%400==0) {
+				return 29;
+			}
+				else {
+					return 28;
+				}
+		
+				
+			}
+		return ( SoNgay(thang, nam));
+		}
+        
+    public static void main(String args[]){
+    	int thang  = Integer.parseInt(args[0]);
+    	int nam = Integer.parseInt(args[1]);
+        if( namthang(thang ,nam)==true) {
+        	System.out.println(SoNgay(thang,nam));
+        }
+        else{
+        	System.out.println("Incorrect!");
+        }
+        
+    }
+   
+}
